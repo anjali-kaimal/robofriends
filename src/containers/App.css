@@ -1,0 +1,21 @@
+body {
+    position: relative;
+}
+
+@font-face {
+    font-family: 'SEGA LOGO FONT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
+}
+
+.heading {
+    font-family: "SEGA LOGO FONT";
+    color: aquamarine;
+    font-weight: 200;
+}
+
+.loader {
+    text-align: center;
+    transform: translate(0%, 50%);
+}
