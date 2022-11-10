@@ -5,7 +5,8 @@ import "./App.css";
 import loading from "./loading.svg";
 import "tachyons";
 import Scroll from "../components/scroll";
-// import GenerateRobot from "./generateRobot.js";
+import ErrorBoundary from "../components/ErrorBoundary"
+import GenerateOwnRobot from "../components/GenerateOwnRobot";
 
 class App extends React.Component {
 
@@ -19,6 +20,7 @@ class App extends React.Component {
     }
 
     // this function gets called after render
+    //AJAX
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
@@ -41,6 +43,10 @@ class App extends React.Component {
         console.log("inside app js")
     }
 
+    onAddClick=(event)=>{
+        
+    }
+
 
     // render gets called after constructor and also each time any update happens
     render() {
@@ -56,11 +62,14 @@ class App extends React.Component {
         else{
         return (
             <div className="tc" >
-                <h1 className="heading f1">ROBOFRIENDS</h1>
+                <h1 className="heading f1">FIND MY FRIENDS</h1>
                 <SearchBox searchchange={this.onSearchChange} />
               {/* <GenerateRobot addrobo={this.addOwnRobot}/> */}
+              {/* <GenerateOwnRobot addClick={this.onAddClick} clickSubmit={this.addOwnRobot}/> */}
               <Scroll>
+                <ErrorBoundary>
                 <CardsList robots={filteredRobots} />
+                </ErrorBoundary>
                 </Scroll>
             </div>
         );

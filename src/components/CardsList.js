@@ -3,7 +3,6 @@ import React from "react";
 
 
 const CardsList = ({ robots , onPageLoad}) => {
-
   // return card list
   return (
 
